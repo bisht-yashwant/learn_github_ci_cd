@@ -5,15 +5,36 @@ on:
     branches: [ "main" ]
 
 jobs:
+  prod:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code first command
+        uses: actions/checkout@v4
+
+      - name: Show files middle command
+        run: ls -la
+
+      - name: Run simple command last command
+        run: echo "CI is working test server"
+
+  
+  dev:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout something
+        uses: actions/checkout@v4
+
+      - name: testing the system
+        run: echo "CI is working dev server"
+  
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
+      - name: Some fancy section
         uses: actions/checkout@v4
 
-      - name: Show files
-        run: ls -la
-
-      - name: Run simple command
-        run: echo "CI is working 🚀"
+      - name: Last part/ code deployment
+        run: echo "CI is working server"
